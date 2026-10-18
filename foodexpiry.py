@@ -2,7 +2,12 @@ import streamlit as st
 import sqlite3
 import pandas as pd
 from datetime import date, timedelta
-from winotify import Notification
+import os
+
+if os.name == "nt":
+    from winotify import Notification
+else:
+    Notification = None
 
 # App settings
 st.set_page_config(
