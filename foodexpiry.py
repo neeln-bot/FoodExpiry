@@ -81,7 +81,7 @@ if rows:
         expiry_date = date.fromisoformat(expiry_text)
         days_left = (expiry_date - date.today()).days
 
-        if 0 <= days_left <= 3:
+        if Notification is not None and 0 <= days_left <= 3:
             toast = Notification(
                 app_id="Food Expiry Alert",
                 title="Food Expiry Alert",
